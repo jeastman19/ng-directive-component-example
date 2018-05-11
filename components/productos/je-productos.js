@@ -10,7 +10,7 @@
             scope: {},
             templateUrl: 'components/productos/je-productos.html',
             controller: 'jeProductosController',
-            controllerAs: 'my'
+            controllerAs: 'ct'
         }
     }
 
