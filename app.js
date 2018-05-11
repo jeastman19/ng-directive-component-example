@@ -4,13 +4,13 @@
         .config(appConfig)
         .controller('MyController', MyController)
         .service('MyService', MyService)
-        .directive('miDirectiva', miDirectiva)
-        .directive('miItem', miItem);
+        .directive('jeProductos', jeProductos)
+        .directive('jeItem', jeItem);
     
     function appConfig ($routeProvider) {
         $routeProvider
             .when('/', {
-                template: '<mi-directiva></mi-directiva>'
+                template: '<je-productos></mi-directiva>'
             });
     }
 
@@ -37,7 +37,7 @@
         }
     }
 
-    function miDirectiva() {
+    function jeProductos() {
         return {
             scope: {},
             templateUrl: 'tpl/listado.html',
@@ -46,12 +46,12 @@
         }
     }
 
-    function miItem() {
+    function jeItem() {
         return {
             scope: {
                 data: '='
             },
-            templateUrl: 'tpl/mi-item.html'
+            templateUrl: 'tpl/je-item.html'
         }
     }
 
