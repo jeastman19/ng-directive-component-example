@@ -9,7 +9,6 @@
 
 
     function jeProductosController(DataService) {
-        console.log('jeProductosController');
         this.productos = DataService.getData();
     }
 })();

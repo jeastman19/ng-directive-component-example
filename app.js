@@ -4,7 +4,6 @@
             'ngRoute'
         ])
         .config(appConfig)
-        .directive('jeProductos', jeProductos)
         .directive('jeItem', jeItem);
     
     function appConfig ($routeProvider) {
@@ -15,15 +14,6 @@
     }
 
     
-    function jeProductos() {
-        return {
-            scope: {},
-            templateUrl: 'components/productos/je-productos.html',
-            controller: 'jeProductosController',
-            controllerAs: 'my'
-        }
-    }
-
     function jeItem() {
         return {
             scope: {
