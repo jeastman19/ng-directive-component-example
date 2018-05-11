@@ -3,7 +3,6 @@
         .module('myApp', ['ngRoute'])
         .config(appConfig)
         .controller('MyController', MyController)
-        .service('MyService', MyService)
         .directive('jeProductos', jeProductos)
         .directive('jeItem', jeItem);
     
@@ -14,33 +13,16 @@
             });
     }
 
-    function MyController (MyService) {
-        this.productos = MyService.getData();
-    }
+    MyController.$inject = ['DataService'];
 
-    function MyService () {
-        return {
-            getData: getData
-        }
-
-        function getData() {
-            var datos = [
-                { titulo: 'Producto 1', precio: 2},
-                { titulo: 'Producto 2', precio: 1.5},
-                { titulo: 'Producto 3', precio: 4.2},
-                { titulo: 'Producto 4', precio: 3},
-                { titulo: 'Producto 5', precio: 2.5},
-                { titulo: 'Producto 5', precio: 2.5}
-            ];
-
-            return datos;
-        }
+    function MyController (DataService) {
+        this.productos = DataService.getData();
     }
 
     function jeProductos() {
         return {
             scope: {},
-            templateUrl: 'tpl/listado.html',
+            templateUrl: 'components/productos/je-productos.html',
             controller: 'MyController',
             controllerAs: 'my'
         }
