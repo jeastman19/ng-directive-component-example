@@ -3,8 +3,7 @@
         .module('myApp', [
             'ngRoute'
         ])
-        .config(appConfig)
-        .directive('jeItem', jeItem);
+        .config(appConfig);
     
     function appConfig ($routeProvider) {
         $routeProvider
@@ -12,15 +11,5 @@
                 template: '<je-productos></je-productos>'
             });
     }
-
     
-    function jeItem() {
-        return {
-            scope: {
-                data: '='
-            },
-            templateUrl: 'tpl/je-item.html'
-        }
-    }
-
 })();
